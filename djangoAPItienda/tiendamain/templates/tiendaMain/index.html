@@ -1,0 +1,7 @@
+<h1>Hola</h1>
+
+{% if latest_product_list %}
+    {% for prod in latest_product_list %}
+        {{ prod.id }}
+    {% endfor %}
+{% endif %}

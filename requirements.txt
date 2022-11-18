@@ -1,0 +1,5 @@
+mysqlclient
+Django
+djangorestframework
+djangorestframework-simplejwt
+django-model-utils
