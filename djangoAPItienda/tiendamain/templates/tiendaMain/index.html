@@ -1,7 +1,32 @@
 <h1>Hola</h1>
 
-{% if latest_product_list %}
-    {% for prod in latest_product_list %}
-        {{ prod.id }}
-    {% endfor %}
-{% endif %}
+{% block head %}
+    <head>
+        {% load static %}
+    </head>
+{% endblock head %}
+
+{% block content %}
+    <div class="content">
+        <div>
+            <table id="tabla-productos">
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Descripcion</th>
+                    <th>Serial num</th>
+                    <th>Precio</th>
+                    <th colspan="2">Opciones</th>
+                </tr>
+            </table>
+        </div>
+        <input type="button" id="call-product" value="boton">
+    </div>
+{% endblock content %}
+
+{% block footer %}
+    <footer>
+        <script src="{% static 'static_jquery/js/jquery.js' %}"></script>
+        <script src="{% static 'js/main.js' %}"></script>
+    </footer>
+{% endblock footer %}   

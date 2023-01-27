@@ -5,7 +5,6 @@ from .serializers import ProductSerializer, CommentSerializer, UsuarioSerializer
 from .models import Product, Comment, Usuario
 from rest_framework import status
 from django.http import Http404
-from django.shortcuts import render
 
 
 # Create your views here.

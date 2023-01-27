@@ -3,3 +3,4 @@ Django
 djangorestframework
 djangorestframework-simplejwt
 django-model-utils
+django-static-jquery
