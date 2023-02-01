@@ -12,10 +12,14 @@ class IndexView(generic.ListView):
         products = requests.get("http://127.0.0.1:8000/api/v1/product/")
         return products.json()
         
-# def editar_product(request, pk):
-#     template_name = 'tienaMain/editar.html'
-#     producto = requests.get("http://127.0.0.1:8000/api/v1/product/{}".format(pk)).json()
-#     context = {
-#         'producto': producto
-#     }
-#     return render(request, template_name, context)
+def editar_product(request, pk):
+    template_name = 'tiendaMain/editar.html'
+    producto = requests.get("http://127.0.0.1:8000/api/v1/product/{}".format(pk)).json()
+    context = {
+        'producto': producto
+    }
+    return render(request, template_name, context)
+
+def ingresar_product(request):
+    template_name = 'tiendaMain/ingresar.html'
+    return render(request, template_name)

@@ -1,0 +1,39 @@
+<h1>Hola</h1>
+
+{% block head %}
+    <head>
+        {% load static %}
+    </head>
+{% endblock head %}
+
+{% block content %}
+    <div class="formulario">
+        <form action="" id="form">
+            <!-- <label for="id">Id:</label><br> -->
+            <input type="text" name="id" id="input_id" value="{{ producto.id }}" disabled hidden="true">
+            <label for="name">Nombre:</label><br>
+            <input type="text" name="name" id="input_name" value="{{ producto.name }}"><br>
+            
+            <label for="img_url">Url Imagen:</label><br>
+            <input type="text" name="img_url" id="input_iurl" value="{{ producto.img_url }}"><br>
+            
+            <label for="description">Descripcion:</label><br>
+            <input type="text" name="description" id="input_desc" value="{{ producto.description }}"><br>
+            
+            <label for="serial_num">Serial num:</label><br>
+            <input type="number" name="serial_num" id="input_num" value="{{ producto.serial_num }}"><br>
+            
+            <label for="price">Precio:</label><br>
+            <input type="number" name="price" id="input_price" value="{{ producto.price }}"><br>
+            <input type="button" name="Boton_enviar" id="send_btn" value="Modificar">
+        </form>
+    </div>
+{% endblock content %}
+
+{% block footer %}
+    <footer>
+        {{ producto|json_script:"hello-data" }}
+        <script src="{% static 'static_jquery/js/jquery.js' %}"></script>
+        <script src="{% static 'js/editar.js' %}"></script>
+    </footer>
+{% endblock footer %}   

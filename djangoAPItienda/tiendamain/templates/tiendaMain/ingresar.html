@@ -1,0 +1,36 @@
+<h1>Hola</h1>
+
+{% block head %}
+    <head>
+        {% load static %}
+    </head>
+{% endblock head %}
+
+{% block content %}
+    <div class="formulario">
+        <form action="" id="form">
+            <label for="name">Nombre:</label><br>
+            <input type="text" name="name" id="input_name" ><br>
+            
+            <label for="img_url">Url Imagen:</label><br>
+            <input type="text" name="img_url" id="input_iurl" ><br>
+            
+            <label for="description">Descripcion:</label><br>
+            <input type="text" name="description" id="input_desc" ><br>
+            
+            <label for="serial_num">Serial num:</label><br>
+            <input type="number" name="serial_num" id="input_num" ><br>
+            
+            <label for="price">Precio:</label><br>
+            <input type="number" name="price" id="input_price" ><br>
+            <input type="button" name="Boton_enviar" id="send_btn" value="Registrar">
+        </form>
+    </div>
+{% endblock content %}
+
+{% block footer %}
+    <footer>
+        <script src="{% static 'static_jquery/js/jquery.js' %}"></script>
+        <script src="{% static 'js/ingresar.js' %}"></script>
+    </footer>
+{% endblock footer %}   

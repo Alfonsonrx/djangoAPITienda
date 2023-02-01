@@ -14,7 +14,7 @@ function getCookie(cname) {
     return "";
 }
 
-$(document).ready(function() {
+$(document).ready(() => {
     const api_url = "http://localhost:8000/api/v1/product/";
     var divproductos = $('#tabla-productos');
     
@@ -25,14 +25,14 @@ $(document).ready(function() {
                     for (let i = 0; i < data.length; i++) {
                         let element = data[i];
                         var nuevo_prod = '<tr class="producto">' 
-                        + '<td>' + element.id + '</td>'
-                        + '<td>' + element.name + '</td>'
-                        + '<td>' + element.description + '</td>'
-                        + '<td>' + element.serial_num + '</td>'
-                        + '<td>' + element.price + '</td>'
-                        + '<td> <input type="button" class="borrar" value="Borrar" id='+element["id"]+' > </td>'
-                        + '<td> <input type="button" class="borrar" value="Borrar" id='+element["id"]+' > </td>'
-                        + '</tr>';
+                                        + '<td>' + element.id + '</td>'
+                                        + '<td>' + element.name + '</td>'
+                                        + '<td>' + element.description + '</td>'
+                                        + '<td>' + element.serial_num + '</td>'
+                                        + '<td>' + element.price + '</td>'
+                                        + '<td> <input type="button" class="borrar" value="Borrar" id='+element["id"]+' > </td>'
+                                        + `<td> <a class="editar" href="editar_prod/`+element["id"]+`/">Editar</a> </td>`
+                                        + '</tr>';
                         divproductos.append(nuevo_prod);
                     }
                 });
